@@ -13,6 +13,7 @@ a {
     max-width: 1260px;
     margin: 0 auto;
     height: 100%;
+    padding: 0 10px;
 }
 
 header, section {
@@ -25,6 +26,7 @@ header {
 
 .topbar {
     width: 100%;
+/*    padding: 0 5%;*/
     height: 100px;
     position: fixed;
     top: 0;
@@ -44,8 +46,7 @@ header {
 }
 
 .logo {
-    width: 250px;
-/*    border: 1px solid white;*/
+    width: 200px;
     position: relative;
 }
 
@@ -110,6 +111,7 @@ header {
 
 .burger {
     width: 25px;
+    cursor: pointer;
 }
 
 .burgerline {
@@ -119,6 +121,66 @@ header {
     transition: all 300ms ease-out;
 }
 
+.burgerline2 {
+    opacity: 1;
+    transition: all 300ms ease-out, background-color 200ms ease-out 100ms !important;
+}
+
+.burgerline3 {
+    transition: all 300ms ease-out, background-color 100ms ease-out 200ms !important;
+}
+
+.burger:hover .burgerline, .burgerClicked {
+    background-color: #3ba9e1 !important;
+}
+
+.burgerline1Transform {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.burgerline2Transform {
+    opacity: 0;
+}
+
+.burgerline3Transform {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+.mobileNavContainer {
+    position: fixed;
+    height: calc(100vh - 100px);
+    height: 100vh;
+    z-index: 999;
+    right: -450px;
+    width: 350px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 100px 50px #000000;
+    transition: all 500ms ease-out;
+}
+
+.mobileNav {
+    width: 100%;
+}
+
+.mobileNav ul li {
+    line-height: 3;
+    text-align: center;
+    background-color: transparent;
+    transition: all 300ms ease-out;
+}
+
+.mobileNav ul li:hover {
+    color: #ffffff;
+    background-color: #3ba9e1;
+}
+
+.showNav {
+    right: 0px;
+}
+
 .welcomeVideo {
     width: 100%;
     height: 100%;
@@ -126,6 +188,8 @@ header {
     top: 0;
     left: 0;
     overflow: hidden;
+    filter: hue-rotate(130deg);
+/*    filter: grayscale(0.6) hue-rotate(130deg);*/
 }
 
 .welcomeVideo video {
@@ -135,14 +199,33 @@ header {
     padding: 0;
 }
 
+.innerPageVideo {
+    height: 70vh;
+    width: 100%;
+    filter: brightness(0.7);
+}
+
+.innerPageVideo video {
+    min-height: 100%;
+    min-width: 100%;
+}
+
 .overlay {
     height: 100vh;
     width: 100%;
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 999;
+    z-index: 998;
     background-color: rgba(25, 73, 97, 0.6);
+}
+
+#productsPageHeader {
+    overflow: hidden;
+}
+
+.products-page .overlay {
+    height: 70vh;
 }
 
 .overlayContent {
@@ -154,17 +237,19 @@ header {
     color: #ffffff;
     height: 100%;
     width: 100%;
+    margin-top: 50px;
 }
 
 h1 {
 /*    margin: 20px;*/
-    line-height: 2;
+    line-height: 1.2;
     text-align: center;
-    font-size: 40px;
+    font-size: 25px;
 }
 
 .overlay p {
-    margin: 0 12.5%;
+    margin: 0 2.5%;
+    font-size: 15px;
     line-height: 1.5;
 }
 
@@ -172,7 +257,7 @@ h1 {
     height: 5px;
     width: 100px;
     background-color: #3ba9e1;
-    margin-bottom: 20px;
+    margin: 20px 0;
 }
 
 .button {
@@ -183,7 +268,7 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #3ba9e1;;
+    background-color: #3ba9e1;
     text-transform: uppercase;
     padding: 0;
     cursor: pointer;
@@ -205,16 +290,22 @@ h1 {
     letter-spacing: 2px;
 }
 
+.products-page .overlayContent .button {
+    margin: 0;
+    margin-top: 30px;
+}
+
 h2 {
     width: 100%;
     text-align: center;
-    padding: 40px;
-    font-size: 30px;
+    padding-bottom: 40px;
+    font-size: 22px;
     color: #194961;
 }
 
-.our-clients {
-    padding-bottom: 20px;
+.our-clients, .popular-industries {
+/*    padding-bottom: 20px;*/
+    padding: 60px 0;
 }
 
 .client-logos, .popularIndustries {
@@ -234,9 +325,10 @@ h2 {
 }
 
 .popularIndustry {
-    font-size: 80px;
+    font-size: 40px;
     color: #575757;
-    height: 140px;
+    width: 50%;
+    margin: 20px 0;
 }
 
 .popularIndustry i {
@@ -298,16 +390,23 @@ h2 {
 }
 
 .syncoms-services {
-    background-color: #194961;
-/*    padding-top: 60px;*/
-/*    background-image: linear-gradient(90deg, #186a94, #1488CC);*/
+    background-image: url(../images/shutterstock_1176137125.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.syncoms-services-bg {
+    height: 100%;
+    width: 100%;
+    padding: 80px 0;
+    background-color: rgba(25, 73, 97, 0.9);
 }
 
 .syncoms-services h1 {
     color: #ffffff;
-    line-height: 1.5;
-    padding: 20px;
-    font-size: 35px;
+    line-height: 1.2;
+    font-size: 24px;
 }
 
 .syncoms-services p {
@@ -315,9 +414,10 @@ h2 {
 }
 
 .largeP {
-    font-size: 22px;
+    font-size: 16px;
     text-align: center;
     line-height: 1.4;
+    padding: 0 2.5%;
 }
 
 .syncoms-services .container, .our-process .container, .client-testimonials .container {
@@ -333,8 +433,11 @@ h2 {
     justify-content: center;
     align-items: center;
     width: 100%;
+    margin-top: 30px;
+/*
     margin: 80px 0;
     height: 540px;
+*/
 }
 
 .service {
@@ -353,7 +456,6 @@ h2 {
     justify-content: center;
     background-color: #194961;
     position: absolute;
-    left: 
 }
 
 .serviceName {
@@ -365,6 +467,8 @@ h2 {
     filter: grayscale(100%) brightness(60%);
     cursor: pointer;
     transition: all 300ms ease-out;
+    padding: 0 12.5px;
+    line-height: 1.5;
 }
 
 .serviceName:hover {
@@ -394,14 +498,16 @@ h2 {
 .serviceNames {
     width: 100%;
     display: flex;
-    justify-content: space-between;
-    font-size: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 30px;
     font-weight: 700;
 }
 
 .serviceDescs {
     width: 100%;
     height: 100%;
+    margin-top: 15px;
 }
 
 .serviceDesc {
@@ -429,7 +535,7 @@ h2 {
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 40px;
+    font-size: 20px;
     width: 100%;
     height: 100%;
 /*    background-color: rgba(25, 73, 97, 1);*/
@@ -470,7 +576,7 @@ h2 {
 }
 
 .ourProcess {
-    margin: 80px 0;
+    margin: 30px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -483,16 +589,17 @@ h2 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 18%;
+    width: 100%;
     padding-top: 20px;
+    margin-bottom: 20px;
     border-radius: 5px;
     background-color: transparent;
     transition: all 300ms ease-out;
 }
 
 .circleFill {
-    width: 150px;
-    height: 150px;
+    width: 90px;
+    height: 90px;
     position: absolute;
     border-radius: 50%;
     background-color: #ffffff;
@@ -502,8 +609,8 @@ h2 {
 }
 
 .iconCont {
-    height: 150px;
-    width: 150px;
+    height: 90px;
+    width: 90px;
     border-radius: 50%;
     border: 3px solid #ffffff;
     display: flex;
@@ -512,7 +619,7 @@ h2 {
 }
 
 .iconCont i {
-    font-size: 90px;
+    font-size: 45px;
     color: #ffffff;
     position: relative;
     transition: all 300ms ease-out;
@@ -531,15 +638,15 @@ h2 {
 
 .processDesc {
     width: 100%;
-    height: 200px;
     text-align: center;
     display: flex;
     justify-content: center;
     line-height: 1.2;
+    font-size: 16px;
 }
 
 .processDesc p {
-    padding: 10px;
+    padding: 10px 10px 20px 10px;
 }
 
 .processStage:hover, .processStageHover {
@@ -549,7 +656,7 @@ h2 {
 }
 
 .processStage:hover .iconCont i, .iconContiHover {
-    font-size: 80px !important;
+    font-size: 40px !important;
     color: #3ba9e1 !important;
 }
 
@@ -565,11 +672,12 @@ h2 {
 }
 
 .scene {
-    margin: 80px 0;
+    margin: 0;
     width: 100%;
-    height: 550px;
+    height: 650px;
     position: relative;
     perspective: 1000px;
+    overflow: hidden;
 }
 
 .noPerspective {
@@ -588,7 +696,7 @@ h2 {
     position: absolute;
     width: 100%;
     height: 100%;
-    font-size: 20px;
+    font-size: 16px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -599,7 +707,7 @@ h2 {
 }
 
 .carousel-cell p {
-    padding: 50px 200px;
+    padding: 20px 25px;
     line-height: 1.5;
 }
 
@@ -610,9 +718,9 @@ h2 {
 /*    margin-top: -225px;*/
     position: absolute;
     background-color: transparent;
-    z-index: 10000;
+    z-index: 999;
     margin-top: 54px;
-    font-size: 50px;
+    font-size: 25px;
 }
 
 .openQuotes {
@@ -650,20 +758,260 @@ strong {
     font-weight: 700;
 }
 
-.syncoms-services-bg {
-    height: 100%;
-    width: 100vw;
-    padding: 80px 0;
-    background-color: rgba(25, 73, 97, 0.8);
-}
-
 footer {
     background-color: #194961;
     width: 100%;
     color: #ffffff;
+    padding: 80px 0;
 }
 
-@media screen and (min-width: 960px) {
+.footerContent {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.footerContent .logo {
+    width: 300px;
+}
+
+.company-details {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.addresses {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+}
+
+address {
+    margin: 15px 0;
+    line-height: 1.3;
+}
+
+.addresses:last-child address {
+    margin-bottom: 0;
+}
+
+.social-media {
+    display: flex;
+    width: 205px;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.social-media-box {
+    height: 60px;
+    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: transparent;
+    border: 2px solid #3ba9e1;
+    color: #3ba9e1;
+    font-size: 25px;
+    transition: all 300ms ease-out;
+    cursor: pointer;
+}
+
+.social-media-box:hover {
+    background-color: #3ba9e1;
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+.contact-form-area {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+.contact-form-area h2 {
+    color: #ffffff;
+    font-size: 25px;
+    padding-bottom: 20px;
+}
+
+.contact-form-area p {
+    padding-bottom: 20px;
+    font-size: 17px;
+    text-align: center;
+}
+
+.contact-form {
+    width: 100%;
+}
+
+fieldset {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.input-names {
+    width: 48%;
+}
+
+input {
+    width: 98%;
+    height: 40px;
+/*    border-radius: 5px;*/
+    border: none;
+}
+
+input[placeholder], textarea[placeholder] {
+    padding-left: 2%;
+    font-family: 'Lato', 'Helvetica', sans-serif;
+}
+
+textarea[placeholder] {
+    padding-top: 10px;
+}
+
+.flex-fieldset {
+    display: flex;
+    justify-content: space-between;
+}
+
+textarea {
+    width: 98%;
+    resize: none;
+    border-radius: 5px;
+    border: none;
+    height: 150px;
+    padding: 0;
+    font-family: 'Lato', 'Helvetica', sans-serif;
+}
+
+button.button {
+    margin: 0;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 14px;
+    width: 50%;
+    margin-left: 50%;
+    transition: all 200ms ease-out;
+}
+
+button.button:hover {
+    letter-spacing: 2px;
+    transform: scale(1.05);
+}
+
+.copyright {
+    margin-top: 50px;
+    font-size: 15px;
+    position: absolute;
+}
+
+.web2print-products {
+    padding: 120px 0;
+    background-color: #f3f3f3;
+}
+
+.productbox {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 0 3px 10px #194961;
+    color: #ffffff;
+    text-align: left;
+}
+
+.productDesc {
+    width: 100%;
+    background-color: #3ba9e1;
+}
+
+.productFeatures {
+    width: 100%;
+    background-color: #194961;
+}
+
+.productbox h2, .productbox h3 {
+    text-align: left;
+    color: #ffffff;
+    margin: 80px 50px 40px 50px;
+    width: calc(100% - 100px);
+    padding: 0;
+}
+
+h3 {
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.productbox p {
+    margin: 0 50px 40px 50px;
+    line-height: 1.3;
+}
+
+.productbox span {
+    display: block;
+    margin: 0 50px 10px 50px;
+    line-height: 1.3;
+    font-size: 16px;
+}
+
+.productbox span i {
+    color: #3ba9e1;
+    margin-right: 10px;
+}
+
+.productDesc .button {
+    margin: 0 0 80px 50px;
+    border-color: #194961;
+    width: 200px;
+    background-color: #194961;
+    transition: all 300ms ease-out;
+}
+
+.productDesc .button p {
+    margin: 0;
+    transition: all 300ms ease-out;
+}
+
+.productDesc .button:hover {
+    transform: scale(1.05);
+    padding: 0;
+    background-color: transparent;
+    border-color: #ffffff;
+}
+
+@media screen and (min-width: 600px) {
+    .client-logo {
+        width: 20%;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .client-logo {
+        width: 18%;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .client-logo {
+        width: 16%;
+    }
+}
+
+@media screen and (min-width: 960px) {    
+    .logo {
+        width: 250px;
+    }
+    
     .navbar {
         display: flex;
     }
@@ -672,12 +1020,49 @@ footer {
         display: none;
     }
     
-    .client-logos {
-/*        margin-top: 80px;*/
+    h1 {
+        font-size: 40px;
+        line-height: 2;
+    }
+    
+    h2 {
+        font-size: 30px;
+    }
+    
+    .overlayContent {
+        margin-top: 0;
+    }
+    
+    .overlay p {
+        margin: 0 12.5%;
+        font-size: 20px;
+    }
+    
+    .lineRule {
+        margin-top: 0;
+    }
+    
+    .our-clients, .popular-industries {
+        padding: 120px 0;
+    }
+    
+    .client-logo, .popularIndustry {
+        margin-bottom: 0;
     }
     
     .client-title {
         justify-content: flex-start;
+    }
+    
+    .syncoms-services h1 {
+        font-size: 35px;
+        line-height: 1.5;
+        padding: 20px;
+    }
+    
+    .largeP {
+        font-size: 22px;
+        padding: 0;
     }
     
     article {
@@ -692,6 +1077,17 @@ footer {
         width: 13%;
     }
     
+    .popularIndustry {
+        font-size: 80px;
+        margin: 25px 0;
+        height: 140px;
+    }
+    
+    .syncomsServices {
+        height: 540px;
+        margin: 80px 0;
+    }
+    
     .syncomsServices, .syncomsServices .container {
         flex-direction: row;
         align-items: center;
@@ -701,21 +1097,150 @@ footer {
     .serviceNames {
         width: 50%;
         flex-direction: column;
+        justify-content: space-between;
     }
 
     .serviceDescs {
         width: 50%;
+        margin-top: 0;
     }
     
     .serviceName {
         font-size: 90px;
         font-weight: 900;
-        line-height: 1.5;
+        padding: 0;
+    }
+    
+    .serviceDescContent {
+        font-size: 40px;
     }
     
     .ourProcess {
         flex-direction: row;
         justify-content: space-between;
+        margin: 80px 0;
+    }
+    
+    .processStage {
+        width: 18%;
+        margin-bottom: 0;
+    }
+    
+    .processDesc {
+        height: 230px;
+    }
+    
+    .processDesc p {
+        padding: 10px;
+    }
+    
+    .circleFill {
+        height: 100px;
+        width: 100px;
+    }
+    
+    .iconCont {
+        height: 100px;
+        width: 100px;
+    }
+    
+    .iconCont i {
+        font-size: 60px;
+    }
+    
+    .processStage:hover .iconCont i, .iconContiHover {
+        font-size: 50px !important;
+    }
+    
+    .footerContent {
+        flex-direction: row;
+    }
+    
+    .company-details {
+        width: 56%;
+        align-items: flex-start;
+        text-align: left;
+    }
+    
+    .addresses {
+        flex-direction: row;
+    }
+    
+    address {
+        margin: 50px 0;
+    }
+    
+    .social-media {
+        margin-top: 0;
+    }
+    
+    .contact-form-area {
+        width: 30%;
+        margin-top: 0;
+    }
+    
+    .contact-form-area h2 {
+        text-align: left;
+    }
+    
+    .contact-form-area p {
+        text-align: left;
+    }
+    
+    .copyright {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
+    .productDesc {
+        width: 60%;
+/*        width: calc(60% - 50px);*/
+    }
+
+    .productFeatures {
+        width: 40%;
+    }
+}
+
+@media screen and (min-width: 1256px) {
+    .processDesc {
+        height: 200px;
+        font-size: 18px;
+    }
+    
+    .circleFill {
+        height: 150px;
+        width: 150px;
+    }
+    
+    .iconCont {
+        height: 150px;
+        width: 150px;
+    }
+    
+    .iconCont i {
+        font-size: 90px;
+    }
+    
+    .processStage:hover .iconCont i, .iconContiHover {
+        font-size: 80px !important;
+    }
+    
+    .scene {
+        margin: 80px 0;
+        height: 550px;
+    }
+    
+    .carousel-cell {
+        font-size: 20px;
+    }
+    
+    .carousel-cell p {
+        padding: 50px 200px;
+    }
+    
+    .carousel-options {
+        font-size: 50px;
     }
 }
 

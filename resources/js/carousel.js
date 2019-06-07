@@ -73,5 +73,34 @@ function togglePerspective() {
     }
 }
 
+function toggleButtonsAbility() {
+    nextButton.removeEventListener('click', function(){
+        selectedIndex++;
+        togglePerspective();
+        rotateCarousel();
+    });
+    
+    prevButton.removeEventListener( 'click', function() {
+        selectedIndex--;
+        togglePerspective();
+        rotateCarousel();
+    });
+    
+    setTimeout(function(){
+        nextButton.addEventListener( 'click', function() {
+            selectedIndex++;
+            togglePerspective();
+            rotateCarousel();
+        });
+        
+        prevButton.addEventListener( 'click', function() {
+            selectedIndex--;
+            togglePerspective();
+            rotateCarousel();
+        });
+    }, 2000);
+}
+
 togglePerspective();
 setInterval(togglePerspective, 7000);
+//setInterval(toggleButtonsAbility, 6500);

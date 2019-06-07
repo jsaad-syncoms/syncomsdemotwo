@@ -28,17 +28,31 @@
                         </nav>
                 
                         <div class="burger" id="burger">
-                            <div class="burgerline"></div>
-                            <div class="burgerline"></div>
-                            <div class="burgerline"></div>
+                            <div class="burgerline burgerline1"></div>
+                            <div class="burgerline burgerline2"></div>
+                            <div class="burgerline burgerline3"></div>
                         </div>
                     </div>
                 </div>
             </div>
             
+            <div class="mobileNavContainer" id="mobileNav">
+                <nav class="mobileNav">
+                    <ul>
+                        <li><a href="">Products</a></li>
+                        <li><a href="#">Industries</a></li>
+                        <li><a href="#">Solutions</a></li>
+                        <li><a href="#">Resources</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Demo</a></li>
+                    </ul>
+                </nav>
+            </div>
+            
             <div class="welcomeVideo" id="welcomeVideo">
                 <video muted autoplay loop preload="auto">
-                    <source src="resources/videos/World-1992.mp4" type="video/mp4">
+                    <source src="resources/videos/globeProgrammingComp.mp4" type="video/mp4">
                 </video>
             </div>
             
@@ -326,10 +340,70 @@
         
         <footer>
             <div class="container">
-                <h1>FOOTER GOES HERE</h1>
-                <h1>ADDRESSES</h1>
-                <h1>SOCIAL MEDIAS</h1>
-                <h1>CONTACT FORM</h1>
+                <div class="footerContent">
+                    <div class="company-details">
+                        <div class="logo"><img src="resources/images/syncoms-logo-white.png" alt="Syncoms Logo"/></div>
+                        
+                        <div class="addresses">
+                            <address><strong>United Kingdom</strong><br>4 Crown Place<br>London<br>EC2A 4BT</address>
+                            <address><strong>USA</strong><br>107 Commerce Street<br>Lake Mary<br>Orlando<br>Florida 32746-6206</address>
+                            <address><strong>India</strong><br>23 &amp; 24, AMR Tech Park<br>2nd Building, Block 1, 1st Floor<br>Hosur Main Road<br>Bangalore - 560 068</address>
+                        </div>
+                        
+                        <div class="social-media">
+                            <div class="social-media-box"><i class="fab fa-twitter"></i></div>
+                            <div class="social-media-box"><i class="fab fa-linkedin-in"></i></div>
+                            <div class="social-media-box"><i class="fab fa-facebook-f"></i></div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form-area">
+                        <h2>Request a Demo</h2>
+                        <p>Fill out your details in the form below and we'll be in touch as soon as possible to discuss your needs and arrange a demo.</p>
+                        <form id="contact-form" class="contact-form">
+                            <fieldset>
+                                <div class="flex-fieldset">
+                                    <div class="input-names">
+                                        <input id="firstname" placeholder="First Name" type="text" name="firstname" />
+                                        <span id="firstname-error"></span>
+                                    </div>
+                                    
+                                    <div class="input-names">
+                                        <input id="lastname" placeholder="Last Name" type="text" name="lastname" />
+                                        <span id="lastname-error"></span>
+                                    </div> 
+                                </div>
+                            </fieldset>
+                            
+                            <fieldset>
+                                <input id="email" placeholder="Email" type="text" name="email" />
+                                <span id="email-error"></span>
+                            </fieldset>
+                            
+                            <fieldset>
+                                <input id="phone" placeholder="Phone Number" type="text" name="phone" />
+                                <span id="phone-error"></span>
+                            </fieldset>
+                            
+                            <fieldset>
+                                <input id="company" placeholder="Company" type="text" name="company" />
+                                <span id="company-error"></span>
+                            </fieldset>
+                            
+<!--
+                            <fieldset>
+                                <textarea id="message" placeholder="Your Message" type="text" name="message"></textarea>
+                            </fieldset>
+-->
+                            
+                            <fieldset>
+                                <button class="button" id="submit" type="submit" name="submit">REQUEST DEMO</button>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+                
+                <p class="copyright">&copy; Copyright Syncoms 2019</p>
             </div>
         </footer>
         
