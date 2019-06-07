@@ -704,6 +704,7 @@ h2 {
     justify-content: center;
     transition: all 1s;
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 
 .carousel-cell p {
